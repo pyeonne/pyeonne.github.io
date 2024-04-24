@@ -1,0 +1,140 @@
+---
+import '@/styles/tailwind.css';
+import '@/styles/font.css';
+
+import { z } from 'astro/zod';
+
+import type { HeadConfigSchema } from '@/schemas/head';
+import { SITE } from '@/utils/consts';
+import { createHead } from '@/utils/head';
+
+const { props } = Astro;
+
+const title = SITE.title;
+
+const description = SITE.description;
+
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : undefined;
+
+const imageURL = props.image ?? SITE.image;
+
+const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
+  // Global Metadata
+  { tag: 'meta', attrs: { charset: 'utf-8' } },
+  {
+    tag: 'meta',
+    attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+  },
+  {
+    tag: 'icon',
+    attrs: {
+      href: '/favicon.svg',
+    },
+  },
+  { tag: 'meta', attrs: { name: 'generator', content: Astro.generator } },
+
+  // Cononical URL
+  { tag: 'link', attrs: { rel: 'canonical', href: canonical?.href } },
+
+  // Primary Meta Tags
+  {
+    tag: 'title',
+    content: title,
+  },
+  {
+    tag: 'meta',
+    attrs: { name: 'title', content: title },
+  },
+  {
+    tag: 'meta',
+    attrs: { name: 'description', content: description },
+  },
+
+  // OpenGraph Tags
+  { tag: 'meta', attrs: { property: 'og:title', content: title } },
+  { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+  { tag: 'meta', attrs: { property: 'og:url', content: canonical?.href } },
+  { tag: 'meta', attrs: { property: 'og:description', content: description } },
+  { tag: 'meta', attrs: { property: 'og:image', content: imageURL } },
+
+  // Twitter Tags
+  {
+    tag: 'meta',
+    attrs: { name: 'twitter:card', content: 'summary_large_image' },
+  },
+  { tag: 'meta', attrs: { name: 'twitter:url', content: canonical?.href } },
+  { tag: 'meta', attrs: { name: 'twitter:title', content: title } },
+  { tag: 'meta', attrs: { name: 'twitter:description', content: description } },
+  { tag: 'meta', attrs: { name: 'twitter:image', content: imageURL } },
+
+  // Sitemap
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'sitemap',
+      href: '/sitemap-index.xml',
+    },
+  },
+
+  // Fonts
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+    },
+  },
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+      crossorigin: 'true',
+    },
+  },
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css',
+    },
+  },
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'preload',
+      href: 'https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-Medium.woff2',
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'true',
+    },
+  },
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'preload',
+      href: 'https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-SemiBold.woff2',
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'true',
+    },
+  },
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap',
+    },
+  },
+];
+
+const head = createHead(headDefaults);
+---
+
+{
+  head.map(({ tag: Tag, attrs, content }) => (
+    <Tag {...attrs} set:html={content} />
+  ))
+}

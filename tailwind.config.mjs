@@ -4,6 +4,11 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['var(--font-sans)', 'sans'],
+      serif: ['var(--font-serif)', 'sans-serif'],
+      mono: ['var(--font-mono)', 'monospace'],
+    },
     container: {
       center: true,
       padding: '2rem',

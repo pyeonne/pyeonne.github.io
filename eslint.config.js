@@ -1,4 +1,3 @@
-import tsEslint from '@typescript-eslint/eslint-plugin';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
@@ -8,25 +7,13 @@ export default [
   // js.configs.recommended,
   ...eslintPluginAstro.configs['flat/recommended'],
   {
+    ignores: ['**/node_modules/'],
     plugins: {
-      '@typescript-eslint': tsEslint,
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
     },
     rules: {
       //
-      '@typescript-eslint/consistent-type-imports': [
-        'warn',
-        {
-          prefer: 'type-imports',
-          fixStyle: 'inline-type-imports',
-        },
-      ],
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-      ],
-
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
       //
@@ -42,13 +29,11 @@ export default [
         },
       ],
     },
+
     settings: {
       tailwindcss: {
         callees: ['cn', 'cva'],
         config: 'tailwind.config.cjs',
-      },
-      next: {
-        rootDir: ['apps/*/'],
       },
     },
   },

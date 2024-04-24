@@ -1,9 +1,9 @@
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
-import starlightBlog from 'starlight-blog';
-
-import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+import starlight from '@astrojs/starlight';
+import tailwind from '@astrojs/tailwind';
+import { defineConfig } from 'astro/config';
+import starlightBlog from 'starlight-blog';
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,7 +24,11 @@ export default defineConfig({
         }),
       ],
       title: 'My Docs',
-      customCss: ['./src/styles/tailwind.css', './src/styles/custom.css'],
+      customCss: [
+        './src/styles/tailwind.css',
+        './src/styles/custom.css',
+        './src/styles/font.css',
+      ],
       social: {
         github: 'https://github.com/pyeonne',
         twitter: 'https://twitter.com/pyeonne',
@@ -49,7 +53,10 @@ export default defineConfig({
         },
       ],
     }),
-    tailwind({ applyBaseStyles: false }),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     react(),
+    sitemap(),
   ],
 });

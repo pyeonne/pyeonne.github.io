@@ -1,0 +1,21 @@
+@font-face {
+  font-display: swap;
+  font-family: 'AritaBuri';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-Medium.woff2')
+    format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'AritaBuri';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-SemiBold.woff2')
+    format('woff2');
+}
+:root {
+  --font-sans: 'Pretendard Variable';
+  --font-serif: 'AritaBuri';
+  --font-mono: 'Source Code Pro';
+}
