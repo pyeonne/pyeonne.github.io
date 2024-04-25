@@ -1,6 +1,5 @@
 ---
-import '@/styles/tailwind.css';
-import '@/styles/font.css';
+import '@/styles/global.css';
 
 import { z } from 'astro/zod';
 
@@ -118,6 +117,16 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
       href: 'https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-SemiBold.woff2',
       as: 'font',
       type: 'font/woff2',
+      crossorigin: 'true',
+    },
+  },
+  {
+    tag: 'link',
+    attrs: {
+      rel: 'preload',
+      href: 'https://cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf',
+      as: 'font',
+      type: 'font/otf',
       crossorigin: 'true',
     },
   },

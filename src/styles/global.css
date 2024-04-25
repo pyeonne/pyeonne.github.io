@@ -1,0 +1,111 @@
+@font-face {
+  font-display: swap;
+  font-family: 'AritaBuri';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-Medium.woff2')
+    format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'AritaBuri';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/amore/AritaBuri-SemiBold.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'DNFBitBitv2';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')
+    format('opentype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*=============== VARIABLES CSS ===============*/
+@layer base {
+  :root {
+    --header-height: 4rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(170, 90%, 34%);
+    --first-color-dark: hsl(170, 100%, 28%);
+    --first-color-darken: hsl(170, 100%, 23%);
+    --second-color: hsl(45, 100%, 52%);
+    --second-color-dark: hsl(45, 100%, 20%);
+    --white-color: hsl(0, 0%, 100%);
+    --shadow-img: drop-shadow(0 12px 24px hsla(0, 0%, 0%, 0.4));
+    --shadow-circle: 0 12px 24px hsla(0, 0%, 0%, 0.4);
+    --shadow-button: 0 -4px 8px hsla(0, 0%, 0%, 0.3);
+    --shadow-card: 0 -8px 24px hsla(0, 0%, 0%, 0.3);
+    --shadow-text: 0 2px 4px var(--first-color-darken);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --font-sans: 'Pretendard Variable', sans;
+    --font-serif: 'AritaBuri', sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
+    --font-pixel: 'DNFBitBitv2', monospace;
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+
+  /*========== Responsive typography ==========*/
+  @media screen and (min-width: 1150px) {
+    :root {
+      --biggest-font-size: 5.5rem;
+      --h1-font-size: 2.5rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: 0.875rem;
+    }
+  }
+
+  /*=============== BASE ===============*/
+  @layer base {
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* react-remove-scroll 에서 강제로 body를 조작한다. */
+    body {
+      @apply m-0 min-h-screen p-0;
+      @apply text-normal font-sans leading-7 tracking-normal antialiased;
+      @apply bg-first text-white;
+    }
+  }
+}
+
+@layer components {
+  /*=============== HEADER & NAV ===============*/
+  .nav__link svg {
+    transition:
+      opacity 0.4s,
+      visibility 0.5s;
+  }
+
+  /* Sibling fade animation */
+  .nav__list:has(.nav__link:hover) .nav__link:not(:hover) {
+    @apply opacity-40;
+  }
+}

@@ -1,9 +1,10 @@
 ---
-import { Button } from '@/components/ui/button';
+import BaseHeader from '@/components/base-header.astro';
 import MainLayout from '@/layouts/main-layout.astro';
 ---
 
 <MainLayout class="font-serif">
-  <h1>Astro</h1>
-  <Button variant="outline">Hello World</Button>
+  <div class="flex min-h-screen w-full flex-col">
+    <BaseHeader />
+  </div>
 </MainLayout>

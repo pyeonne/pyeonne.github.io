@@ -5,9 +5,10 @@ module.exports = {
   prefix: '',
   theme: {
     fontFamily: {
-      sans: ['var(--font-sans)', 'sans'],
-      serif: ['var(--font-serif)', 'sans-serif'],
-      mono: ['var(--font-mono)', 'monospace'],
+      sans: 'var(--font-sans)',
+      serif: 'var(--font-serif)',
+      mono: 'var(--font-mono)',
+      pixel: 'var(--font-pixel)',
     },
     container: {
       center: true,
@@ -17,6 +18,47 @@ module.exports = {
       },
     },
     extend: {
+      height: {
+        header: 'var(--header-height)',
+      },
+      fontSize: {
+        biggest: 'var(--biggest-font-size)',
+        h1: 'var(--h1-font-size)',
+        h2: 'var(--h2-font-size)',
+        h3: 'var(--h3-font-size)',
+        normal: 'var(--normal-font-size)',
+        small: 'var(--small-font-size)',
+      },
+      colors: {
+        first: 'var(--first-color)',
+        'first-dark': 'var(--first-color-dark)',
+        second: 'var(--second-color)',
+        white: 'var(--white-color)',
+      },
+      textColor: {
+        heading: 'var(--heading)',
+        body: 'var(--text-body)',
+        disabled: 'var(--text-disabled)',
+      },
+      dropShadow: {
+        text: 'var(--shadow-text)',
+      },
+      backgroundColor: {
+        page: 'var(--page-background)',
+      },
+      zIndex: {
+        tooltip: 'var-(--z-tooltip)',
+        fixed: 'var-(--z-fixed)',
+      },
+      transitionProperty: {
+        visibility: 'visibility',
+        margin: 'margin',
+        width: 'width',
+        'box-shadow': 'box-shadow',
+      },
+      transitionDuration: {
+        400: '400ms',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
