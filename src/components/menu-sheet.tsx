@@ -1,18 +1,8 @@
-import {
-  ArrowUpRight,
-  AtSign,
-  Github,
-  LayoutGrid,
-  Linkedin,
-  Menu,
-  MoveUpRight,
-  Package2,
-  Twitter,
-} from 'lucide-react';
-import * as SheetPrimitive from '@radix-ui/react-dialog';
+import { AtSign, Github, LayoutGrid, Linkedin, Twitter } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
 import NavLink from './nav-link';
 import NavSocialLink from './nav-social-link';
 
@@ -23,7 +13,7 @@ export default function MenuSheet() {
         <Button
           variant="ghost"
           size="icon"
-          className="nav__toggle shrink-0 md:hidden"
+          className="nav__toggle shrink-0 opacity-70 transition-opacity duration-300 hover:bg-transparent hover:text-white hover:opacity-100 md:hidden"
           id="nav-toggle"
         >
           <LayoutGrid />
@@ -32,7 +22,7 @@ export default function MenuSheet() {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="nav__menu border-r-first-dark bg-first-dark flex flex-col justify-between px-14 pb-[4.5rem] pt-24 md:hidden"
+        className="nav__menu flex flex-col justify-between border-r-first-dark bg-first-dark px-14 pb-[4.5rem] pt-24 md:hidden"
         id="nav-menu"
       >
         <ul className="nav__list flex flex-col gap-y-12 text-lg font-medium">

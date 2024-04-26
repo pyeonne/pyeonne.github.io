@@ -1,5 +1,7 @@
 ---
 import BaseHead from '@/components/base-head.astro';
+import BaseHeader from '@/components/base-header.astro';
+import { cn } from '@/libs/utils';
 ---
 
 <html lang={Astro.props.lang}>
@@ -7,7 +9,8 @@ import BaseHead from '@/components/base-head.astro';
     <BaseHead />
   </head>
   <body>
-    <main class={Astro.props.class}>
+    <BaseHeader />
+    <main class={cn('main flex-1', Astro.props.class)}>
       <slot />
     </main>
   </body>

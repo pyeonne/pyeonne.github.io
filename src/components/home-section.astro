@@ -1,0 +1,113 @@
+---
+import { AtSign, Github, Linkedin } from 'lucide-react';
+
+import { NotionIcon, TwitterXIcon } from '@/components/ui/icons';
+---
+
+<section class="home section" id="home">
+  <div class="home__container container grid justify-center gap-y-16 pt-6">
+    <div class="home__data text-center">
+      <h1
+        class="home__title mb-4 flex flex-col font-pixel text-biggest font-normal drop-shadow-text"
+      >
+        <span>I'M HANA,</span>
+        <span
+          x-data="{ texts: ['Frontend', 'React', 'TypeScript', 'Flutter'] }"
+          x-typewriter.cursor="texts"></span>
+
+        <span class="relative w-max self-center"
+          >DEVELOPER <img
+            src="/images/meat.png"
+            alt="image"
+            class="home__meat absolute -right-12 bottom-2 w-10 opacity-50"
+          /></span
+        >
+      </h1>
+      <p class="home__description mb-4">
+        사용자와 <b>부드러운</b> 상호작용하는 것, 복잡한 것을 <b
+          >단순하고 간편하게</b
+        > 만드는 것에 열광합니다.
+      </p>
+
+      <div class="nav__social mb-10 flex items-center justify-center gap-x-2.5">
+        <a
+          class="nav__social-link p-1 text-white transition-all duration-400 ease-in-out hover:-translate-y-1 hover:text-second"
+          href="mailto:pyeonne@gmail.com"
+          aria-label="email"><AtSign className="h-5 w-5" /></a
+        >
+        <a
+          class="nav__social-link p-1 text-white transition-all duration-400 ease-in-out hover:-translate-y-1 hover:text-second"
+          href="https://github.com/pyeonne"
+          target="_blank"
+          aria-label="github"><Github className="h-5 w-5" /></a
+        >
+        <a
+          class="nav__social-link p-1 text-white transition-all duration-400 ease-in-out hover:-translate-y-1 hover:text-second"
+          href="https://twitter.com/pyeonne"
+          target="_blank"
+          aria-label="twitter"><TwitterXIcon className="h-5 w-5" /></a
+        >
+        <a
+          class="nav__social-link p-1 text-white transition-all duration-400 ease-in-out hover:-translate-y-1 hover:text-second"
+          href="https://www.linkedin.com/in/pyeonne/"
+          target="_blank"
+          aria-label="linkedin"><Linkedin className="h-5 w-5" /></a
+        >
+      </div>
+
+      <div class="home__buttons flex items-center justify-center gap-x-4">
+        <a
+          href="#"
+          class="button flex items-center rounded-[4rem] bg-second px-8 py-3 font-semibold text-second-dark transition-opacity duration-300 hover:opacity-80"
+          ><NotionIcon className="mr-2 h-5 w-5" /> Resume</a
+        >
+        <!-- <a
+          href="#"
+          class="button__ghost rounded-[4rem] bg-transparent px-8 py-3 font-semibold text-second"
+          >Contact Me</a
+        > -->
+      </div>
+    </div>
+    <div
+      class="home__images relative grid place-items-center justify-self-center"
+    >
+      <div
+        class="home__circle grid h-80 w-80 place-items-center rounded-[50%] bg-first-darken"
+      >
+        <div
+          class="home__subcircle h-[250px] w-[250px] rounded-[50%] bg-second"
+        >
+        </div>
+      </div>
+
+      <img src="/images/home-chips.png" alt="imgae" class="home__img" />
+
+      <img
+        src="/images/chips-1.png"
+        alt="imgae"
+        class="home__chips-1 -right-2"
+      />
+      <img
+        src="/images/chips-2.png"
+        alt="imgae"
+        class="home__chips-2 -bottom-3 -right-2"
+      />
+      <img
+        src="/images/chips-3.png"
+        alt="imgae"
+        class="home__chips-3 -left-2 top-1"
+      />
+      <img
+        src="/images/tomato-1.png"
+        alt="imgae"
+        class="home__tomato-1 -top-6 right-10"
+      />
+      <img
+        src="/images/tomato-2.png"
+        alt="imgae"
+        class="home__tomato-2 -bottom-6 left-14"
+      />
+      <img src="/images/leaf-3.png" alt="imgae" class="home__leaf -left-3" />
+    </div>
+  </div>
+</section>

@@ -3,13 +3,16 @@ import MenuSheet from './menu-sheet';
 ---
 
 <header
-  class="header bg-first z-fixed transition-box-shadow duration-400 sticky top-0"
+  x-data="{ atTop: true }"
+  class="header sticky top-0 z-fixed bg-first transition-box-shadow duration-400"
+  :class="{ 'shadow-header ': !atTop, '': atTop }"
   id="header"
+  @scroll.window="atTop = (window.pageYOffset >= 50 ? false : true)"
 >
   <nav
-    class="nav h-header container relative flex items-center justify-between"
+    class="nav container relative flex h-header items-center justify-between"
   >
-    <a href="#" class="nav__logo drop-shadow-text font-pixel">PYEONNE</a>
+    <a href="#" class="nav__logo font-pixel drop-shadow-text">PYEONNE</a>
     <MenuSheet client:load />
   </nav>
 </header>

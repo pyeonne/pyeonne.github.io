@@ -32,7 +32,9 @@ module.exports = {
       colors: {
         first: 'var(--first-color)',
         'first-dark': 'var(--first-color-dark)',
+        'first-darken': 'var(--first-color-darken)',
         second: 'var(--second-color)',
+        'second-dark': 'var(--second-color-dark)',
         white: 'var(--white-color)',
       },
       textColor: {
@@ -47,8 +49,8 @@ module.exports = {
         page: 'var(--page-background)',
       },
       zIndex: {
-        tooltip: 'var-(--z-tooltip)',
-        fixed: 'var-(--z-fixed)',
+        tooltip: 'var(--z-tooltip)',
+        fixed: 'var(--z-fixed)',
       },
       transitionProperty: {
         visibility: 'visibility',

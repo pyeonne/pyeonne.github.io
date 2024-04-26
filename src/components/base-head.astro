@@ -1,7 +1,7 @@
 ---
 import '@/styles/global.css';
 
-import { z } from 'astro/zod';
+import { type z } from 'astro/zod';
 
 import type { HeadConfigSchema } from '@/schemas/head';
 import { SITE } from '@/utils/consts';
@@ -123,18 +123,32 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
   {
     tag: 'link',
     attrs: {
-      rel: 'preload',
-      href: 'https://cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf',
-      as: 'font',
-      type: 'font/otf',
-      crossorigin: 'true',
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap',
+    },
+  },
+
+  // Alpine Plugins
+  {
+    tag: 'script',
+    attrs: {
+      src: 'https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js',
+      defer: true,
     },
   },
   {
-    tag: 'link',
+    tag: 'script',
     attrs: {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap',
+      src: 'https://cdn.jsdelivr.net/npm/@marcreichel/alpine-typewriter/dist/alpine-typewriter.min.js',
+      defer: true,
+    },
+  },
+  // Alpine Core
+  {
+    tag: 'script',
+    attrs: {
+      src: 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
+      defer: true,
     },
   },
 ];

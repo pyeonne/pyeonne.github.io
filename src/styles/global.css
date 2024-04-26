@@ -21,6 +21,20 @@
   src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')
     format('opentype');
 }
+@font-face {
+  font-display: swap;
+  font-family: 'HeirofLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/HeirofLight/HeirofLightOTFRegular.otf') format('opentype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'HeirofLight';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/HeirofLight/HeirofLightOTFBold.otf') format('opentype');
+}
 
 @tailwind base;
 @tailwind components;
@@ -48,10 +62,10 @@
     /*========== Font and typography ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --font-sans: 'Pretendard Variable', sans;
-    --font-serif: 'AritaBuri', sans-serif;
+    --font-serif: 'HeirofLight', sans-serif;
     --font-mono: 'Source Code Pro', monospace;
     --font-pixel: 'DNFBitBitv2', monospace;
-    --biggest-font-size: 3.5rem;
+    --biggest-font-size: 3rem;
     --h1-font-size: 1.5rem;
     --h2-font-size: 1.25rem;
     --h3-font-size: 1rem;
@@ -60,7 +74,7 @@
 
     /*========== z index ==========*/
     --z-tooltip: 10;
-    --z-fixed: 100;
+    --z-fixed: 20;
   }
 
   /*========== Responsive typography ==========*/
@@ -74,30 +88,70 @@
       --small-font-size: 0.875rem;
     }
   }
+}
 
-  /*=============== BASE ===============*/
-  @layer base {
-    * {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
+/*=============== BASE ===============*/
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    /* react-remove-scroll 에서 강제로 body를 조작한다. */
-    body {
-      @apply m-0 min-h-screen p-0;
-      @apply text-normal font-sans leading-7 tracking-normal antialiased;
-      @apply bg-first text-white;
-    }
+  /* react-remove-scroll 에서 강제로 body를 조작한다. */
+  body {
+    @apply m-0 flex min-h-screen flex-col p-0;
+    @apply font-sans text-normal antialiased;
+    @apply bg-first text-white;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  .container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .section {
+    padding-block: 5rem 1rem;
+  }
+
+  .section__title {
+    margin-bottom: 1.5rem;
+    font: var(--font-regular) var(--h1-font-size) var(--second-font);
+    text-align: center;
+    text-shadow: var(--shadow-text);
+  }
+
+  .main {
+    overflow: hidden;
   }
 }
 
+/*=============== HEADER & NAV ===============*/
 @layer components {
-  /*=============== HEADER & NAV ===============*/
   .nav__link svg {
     transition:
       opacity 0.4s,
@@ -107,5 +161,39 @@
   /* Sibling fade animation */
   .nav__list:has(.nav__link:hover) .nav__link:not(:hover) {
     @apply opacity-40;
+  }
+
+  /* Shadow header */
+  .shadow-header {
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.15);
+  }
+}
+
+/*=============== HOME ===============*/
+@layer components {
+  .button {
+    box-shadow: inset var(--shadow-button);
+  }
+
+  .button__ghost {
+    box-shadow: inset 0 0 0 3px var(--second-color);
+  }
+
+  .home__circle {
+    box-shadow: inset var(--shadow-circle);
+  }
+
+  .home__subcircle {
+    box-shadow: inset var(--shadow-circle);
+  }
+
+  .home__images .home__img {
+    @apply absolute w-[250px] rotate-[10deg];
+    filter: var(--shadow-img);
+  }
+
+  .home__images img {
+    @apply absolute w-[60px];
+    filter: var(--shadow-img);
   }
 }
