@@ -58,7 +58,7 @@
     --shadow-button: 0 -4px 8px hsla(0, 0%, 0%, 0.3);
     --shadow-card: 0 -8px 24px hsla(0, 0%, 0%, 0.3);
     --shadow-text: 0 2px 4px var(--first-color-darken); */
-    --first-color: hsl(209, 56%, 84%);
+    --first-color: hsla(209, 78%, 35%, 0.75);
     --black-color: hsl(0, 0%, 0%);
     --black-color-light: hsl(0, 0%, 40%);
     --white-color: hsl(0, 0%, 95%);
@@ -184,7 +184,7 @@
     right: -8px;
     width: 40px;
     height: 28px;
-    background-color: hsla(14, 98%, 50%, 0.2);
+    background-color: hsla(209, 78%, 35%, 0.2);
     content: '';
   }
 
@@ -213,5 +213,49 @@
 
   .main {
     overflow: hidden; /* For animation ScrollReveal */
+  }
+}
+
+/*=============== BUTTON ===============*/
+@layer components {
+  .button,
+  .button__ghost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+  }
+
+  .button {
+    padding: 1.1rem 1.5rem;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    transition: background-color 0.4s;
+  }
+
+  .button svg {
+    font-size: 1.25rem;
+  }
+
+  .button:hover {
+    background-color: var(--first-color);
+  }
+
+  .button__ghost {
+    padding: 0.5rem;
+    border: 3px solid var(--black-color);
+    color: var(--black-color);
+    transition:
+      border 0.4s,
+      color 0.4s;
+  }
+
+  .button__ghost svg {
+    font-size: 1.25rem;
+  }
+
+  .button__ghost:hover {
+    border: 3px solid var(--first-color);
   }
 }
