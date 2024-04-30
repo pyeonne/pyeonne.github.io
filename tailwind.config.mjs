@@ -17,6 +17,9 @@ module.exports = {
         '2xl': '1400px',
       },
     },
+    screens: {
+      lg: '1150px',
+    },
     extend: {
       height: {
         header: 'var(--header-height)',
@@ -31,11 +34,14 @@ module.exports = {
       },
       colors: {
         first: 'var(--first-color)',
-        'first-dark': 'var(--first-color-dark)',
-        'first-darken': 'var(--first-color-darken)',
-        second: 'var(--second-color)',
-        'second-dark': 'var(--second-color-dark)',
+        black: 'var(--black-color)',
+        'black-light': 'var(--black-color-light)',
         white: 'var(--white-color)',
+        title: 'var(--title-color)',
+        text: 'var(--text-color)',
+        'text-light': 'var(--text-color-light)',
+        body: 'var(--body-color)',
+        container: 'var(--container-color)',
       },
       textColor: {
         heading: 'var(--heading)',
@@ -44,9 +50,6 @@ module.exports = {
       },
       dropShadow: {
         text: 'var(--shadow-text)',
-      },
-      backgroundColor: {
-        page: 'var(--page-background)',
       },
       zIndex: {
         tooltip: 'var(--z-tooltip)',
