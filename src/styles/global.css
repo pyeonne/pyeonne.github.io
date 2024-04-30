@@ -58,7 +58,7 @@
     --shadow-button: 0 -4px 8px hsla(0, 0%, 0%, 0.3);
     --shadow-card: 0 -8px 24px hsla(0, 0%, 0%, 0.3);
     --shadow-text: 0 2px 4px var(--first-color-darken); */
-    --first-color: hsl(14, 98%, 50%);
+    --first-color: hsl(209, 56%, 84%);
     --black-color: hsl(0, 0%, 0%);
     --black-color-light: hsl(0, 0%, 40%);
     --white-color: hsl(0, 0%, 95%);
@@ -205,42 +205,13 @@
     position: absolute;
     top: -5px;
     left: -5px;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border: 3px solid var(--black-color);
     content: '';
   }
 
   .main {
     overflow: hidden; /* For animation ScrollReveal */
-  }
-}
-
-/*=============== HOME ===============*/
-@layer components {
-  .button {
-    box-shadow: inset var(--shadow-button);
-  }
-
-  .button__ghost {
-    box-shadow: inset 0 0 0 3px var(--second-color);
-  }
-
-  .home__circle {
-    box-shadow: inset var(--shadow-circle);
-  }
-
-  .home__subcircle {
-    box-shadow: inset var(--shadow-circle);
-  }
-
-  .home__images .home__img {
-    @apply absolute w-[250px] rotate-[10deg];
-    filter: var(--shadow-img);
-  }
-
-  .home__images img {
-    @apply absolute w-[60px];
-    filter: var(--shadow-img);
   }
 }
