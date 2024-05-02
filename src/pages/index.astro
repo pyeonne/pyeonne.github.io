@@ -1,10 +1,12 @@
 ---
 import AboutSection from '@/components/about-section.astro';
 import HomeSection from '@/components/home-section.astro';
-import MainLayout from '@/layouts/main-layout.astro';
+import ServicesSection from '@/components/services-section.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<MainLayout class="font-serif">
+<BaseLayout class="font-serif">
   <HomeSection />
   <AboutSection />
-</MainLayout>
+  <ServicesSection />
+</BaseLayout>

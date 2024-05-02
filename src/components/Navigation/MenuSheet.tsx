@@ -2,7 +2,7 @@ import { LayoutGrid } from 'lucide-react';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import NavLink from './nav-link';
+import NavLink from '../nav-link';
 
 export default function MenuSheet() {
   return (
