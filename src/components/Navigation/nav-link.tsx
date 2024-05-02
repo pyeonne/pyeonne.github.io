@@ -1,4 +1,4 @@
-import { SheetTrigger } from './ui/sheet';
+import { SheetTrigger } from '@/components/ui/sheet';
 
 interface Props {
   href?: string;

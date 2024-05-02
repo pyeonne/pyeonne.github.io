@@ -1,0 +1,38 @@
+---
+import { ArrowUpRight, Dribbble, Github } from 'lucide-react';
+
+interface Props {
+  subtitle: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { subtitle, title, description, image } = Astro.props;
+---
+
+<article class="projects__card">
+  <div class="projects__image">
+    <img src={image} alt="image" class="projects__img" />
+
+    <a href="" class="projects__button button"><ArrowUpRight /></a>
+  </div>
+
+  <div class="projects__content">
+    <h3 class="projects__subtitle">{subtitle}</h3><h2 class="projects__title">
+      {title}
+    </h2>
+    <p class="projects__description">
+      {description}
+    </p>
+  </div>
+
+  <div class="projects__buttons">
+    <a href="https://github.com/" target="_blank" class="projects__link"
+      ><Github /> View</a
+    >
+    <a href="https://dribbble.com/" target="_blank" class="projects__link"
+      ><Dribbble /> View</a
+    >
+  </div>
+</article>
