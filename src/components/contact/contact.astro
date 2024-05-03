@@ -1,0 +1,327 @@
+---
+import { Github, Linkedin, Send } from 'lucide-react';
+
+import { TwitterXIcon } from '@/components/ui/icons';
+---
+
+<section class="contact section" id="contact">
+  <div class="contact__container grid">
+    <div class="contact__data">
+      <h2 class="section__title-2"><span>Contact Me.</span></h2>
+
+      <p class="contact__description-1">
+        I will read all emails. Send me any message you want and I'll get back
+        to you.
+      </p>
+      <p class="contact__description-2">
+        I need your <b>Name</b> and <b>Email Address</b>, but you won't receive
+        anything other than your reply.
+      </p>
+
+      <div class="geometric-box"></div>
+    </div>
+
+    <div class="contact__mail">
+      <h2 class="contact__title">Send Me A Message</h2>
+
+      <form action="" class="contact__form" id="contact-form">
+        <div class="contact__group">
+          <div class="contact__box">
+            <input
+              type="text"
+              name="user_name"
+              class="contact__input"
+              id="name"
+              required
+              placeholder="First Name"
+            />
+            <label for="name" class="contact__label">First Name</label>
+          </div>
+
+          <div class="contact__box">
+            <input
+              type="email"
+              name="user_email"
+              class="contact__input"
+              id="email"
+              required
+              placeholder="Email Address"
+            />
+            <label for="email" class="contact__label">Email Address</label>
+          </div>
+        </div>
+        <div class="contact__box">
+          <input
+            type="text"
+            name="user_subject"
+            class="contact__input"
+            id="subject"
+            required
+            placeholder="Subject"
+          />
+          <label for="subject" class="contact__label">Subject</label>
+        </div>
+
+        <div class="contact__box contact__area">
+          <textarea
+            name="user_message"
+            id="message"
+            class="contact__input"
+            required
+            placeholder="Message"></textarea>
+          <label for="message" class="contact__label">Message</label>
+        </div>
+
+        <button type="submit" class="contact__button button"
+          ><Send /> Sned Message</button
+        >
+      </form>
+    </div>
+
+    <div class="contact__social">
+      <img
+        src="/images/curved-arrow.svg"
+        alt="image"
+        class="contact__social-arrow"
+      />
+
+      <div class="contact__social-data">
+        <div>
+          <p class="contact__social-description-1">Does not send emails</p>
+          <p class="contact__social-description-2">
+            Write me on my social networks
+          </p>
+        </div>
+
+        <div class="contact__social-links">
+          <a
+            href="https://github.com/pyeonne"
+            target="_blank"
+            class="contact__social-link"><Github className="h-5 w-5" /></a
+          >
+          <a
+            href="https://twitter.com/pyeonne"
+            target="_blank"
+            class="contact__social-link"><TwitterXIcon className="h-5 w-5" /></a
+          ><a
+            href="https://www.linkedin.com/in/pyeonne/"
+            target="_blank"
+            class="contact__social-link"><Linkedin className="h-5 w-5" /></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  /*=============== CONTACT ===============*/
+  .contact.section {
+    padding-bottom: 0;
+  }
+
+  .contact__container.grid {
+    position: relative;
+    grid-template-rows: 300px max-content max-content;
+    row-gap: 0;
+  }
+
+  .contact__data {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: var(--container-color);
+    padding: 3rem 1.5rem 3.5rem;
+    margin-left: auto;
+    border-bottom: 4px solid var(--first-color);
+    z-index: 5;
+    transition: background-color 0.4s;
+  }
+
+  .contact__data .section__title-2 {
+    margin: 0 0 1.5rem;
+    transform: translateX(-3rem);
+  }
+
+  .contact__description-1 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-bottom: 2rem;
+  }
+
+  .contact__description-2 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+  }
+
+  .contact__data .geometric-box {
+    top: 2rem;
+    right: 2.5rem;
+  }
+
+  .contact__mail {
+    position: relative;
+    background-color: var(--black-color);
+    padding: 5rem 1.5rem 2.5rem;
+    margin-top: -2.5rem;
+    transition: background-color 0.4s;
+  }
+
+  .contact__title {
+    color: var(--white-color);
+    font-size: var(--h2-font-size);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contact__form,
+  .contact__group {
+    display: grid;
+    row-gap: 1.25rem;
+  }
+
+  .contact__form {
+    position: relative;
+  }
+
+  .contact__box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+  }
+
+  .contact__input,
+  .contact_button {
+    font-size: var(--normal-font-size);
+    outline: none;
+    border: none;
+  }
+
+  .contact__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-color);
+    border: 3px solid var(--black-color-light);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    font-weight: var(--font-medium);
+    transition:
+      border 0.4s,
+      background-color 0.4s;
+  }
+
+  .contact__inpout::placeholder {
+    color: var(--text-color-light);
+    transition: opacity 0.4s;
+  }
+
+  .contact__input:focus {
+    border: 3px solid var(--white-color);
+  }
+
+  .contact__input:-webkit-autofill {
+    transition:
+      background-color 6000s,
+      color 6000s;
+  }
+
+  .contact__label {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    background-color: var(--black-color);
+    padding: 8px;
+    pointer-events: none;
+    transition:
+      top 0.4s,
+      opacity 0.4s,
+      background-color 0.4s;
+    opacity: 0;
+  }
+
+  .contact__form .contact__area {
+    height: 10rem;
+  }
+
+  .contact__area textarea {
+    resize: none;
+    padding-top: 1rem;
+  }
+
+  .contact__button.button {
+    background-color: var(--first-color);
+    cursor: pointer;
+  }
+
+  /* Opaque placeholder */
+  .contact__input:focus::placeholder {
+    opacity: 0;
+  }
+
+  /* Move label up & sticky label */
+  .contact__input:focus + .contact__label,
+  .contact__input:not(:placeholder-shown).contact__input:not(:focus)
+    + .contact__label {
+    opacity: 1;
+    top: -16px;
+  }
+
+  .contact__social {
+    display: grid;
+    row-gap: 1rem;
+    background-color: hsl(0, 0%, 10%);
+    padding-block: 1rem 2rem;
+    text-align: center;
+  }
+
+  .contact__social-arrow {
+    width: 32px;
+    margin: 0 auto;
+  }
+
+  .contact__social-data {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  .contact__social-description-1 {
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact__social-description-2 {
+    color: var(--white-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+  }
+
+  .contact__social-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 0.75rem;
+  }
+
+  .contact__social-link {
+    background-color: var(--black-color-light);
+    padding: 6px;
+    color: var(--white-color);
+    display: grid;
+    place-items: center;
+    transition: background-color 0.3s;
+  }
+
+  .contact__social-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .contact__social-link:hover {
+    background-color: var(--first-color);
+  }
+</style>

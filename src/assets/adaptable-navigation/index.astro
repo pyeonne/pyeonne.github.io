@@ -1,7 +1,7 @@
 ---
 // Astro frontmatter: JavaScript runs at build time in Astro, before the HTML is generated.
 
-import MainLayout from '../../layouts/main-layout.astro';
+import BaseLayout from '../../layouts/base-layout.astro';
 // Define an array of objects, each representing a card with an image URL.
 const cards = [
   {
@@ -25,7 +25,7 @@ const cards = [
 ];
 ---
 
-<MainLayout>
+<BaseLayout>
   <section x-data="{ atTop: true }">
     <!-- Alpine.js initializes data properties for the component. `atTop` determines if the page is scrolled past a certain point. -->
     <div
@@ -36,7 +36,7 @@ const cards = [
       <!-- This div is styled to change its appearance based on the scroll position, toggling classes for background, opacity, blur, and width. -->
       <div
         x-data="{ open: false }"
-        class="mx-auto flex w-full flex-col p-2 md:flex-row md:items-center md:justify-between"
+        class="md:flex-row md:items-center md:justify-between mx-auto flex w-full flex-col p-2"
       >
         <!-- Another Alpine.js component for handling the navigation menu's open/close state. -->
 
@@ -49,13 +49,13 @@ const cards = [
 
             ✺ Lexington
           </span>
-          <button class="focus:outline-none md:hidden">
+          <button class="md:hidden focus:outline-none">
             <!---- SVG Burger goes here ---->
           </button>
         </div>
         <nav
           :class="{'flex': open, 'hidden': !open}"
-          class="hidden flex-grow flex-col justify-end gap-8 pb-4 md:flex md:flex-row md:pb-0 lg:ml-auto"
+          class="md:flex md:flex-row md:pb-0 hidden flex-grow flex-col justify-end gap-8 pb-4 lg:ml-auto"
         >
           <!-- This navigation changes its display based on the `open` state, showing on mobile when `open` is true. -->
           <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="#_"
@@ -73,7 +73,7 @@ const cards = [
     </div>
     <div class="bg-white">
       <div
-        class="mx-auto px-8 py-24 text-center text-zinc-500 md:px-12 lg:px-24 lg:pt-64"
+        class="md:px-12 mx-auto px-8 py-24 text-center text-zinc-500 lg:px-24 lg:pt-64"
       >
         <div
           class="prose prose-sm prose-headings:font-normal prose-headings:text-xl mx-auto max-w-sm text-gray-500"
@@ -96,7 +96,7 @@ const cards = [
 -->
 
         <div
-          class="mx-auto mt-24 grid max-w-2xl grid-cols-1 gap-8 gap-y-28 sm:grid-cols-1"
+          class="sm:grid-cols-1 mx-auto mt-24 grid max-w-2xl grid-cols-1 gap-8 gap-y-28"
         >
           {
             cards.map((card) => (
@@ -116,7 +116,7 @@ const cards = [
     </div>
     <!-- Starts links to tutorial -->
     <div
-      class="pointer-events-none fixed inset-x-0 bottom-0 p-2 sm:flex sm:justify-center"
+      class="sm:flex sm:justify-center pointer-events-none fixed inset-x-0 bottom-0 p-2"
     >
       <div
         class="pointer-events-auto flex w-full max-w-md divide-x divide-neutral-200 rounded-lg border bg-white shadow-xl"
@@ -156,4 +156,4 @@ const cards = [
     </div>
     <!-- Ends links to tutorial -->
   </section>
-</MainLayout>
+</BaseLayout>
