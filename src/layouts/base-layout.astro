@@ -1,6 +1,7 @@
 ---
 import BaseHead from '@/components/base-head.astro';
 import Navigation from '@/components/navigation/navigation.astro';
+import { Toaster } from '@/components/ui/toaster';
 ---
 
 <html lang={Astro.props.lang}>
@@ -12,5 +13,6 @@ import Navigation from '@/components/navigation/navigation.astro';
     <main class="main">
       <slot />
     </main>
+    <Toaster client:load />
   </body>
 </html>

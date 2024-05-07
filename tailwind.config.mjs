@@ -17,9 +17,6 @@ module.exports = {
         '2xl': '1400px',
       },
     },
-    screens: {
-      lg: '1150px',
-    },
     extend: {
       height: {
         header: 'var(--header-height)',
