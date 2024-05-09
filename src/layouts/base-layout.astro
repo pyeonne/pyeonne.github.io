@@ -1,5 +1,6 @@
 ---
 import BaseHead from '@/components/base-head.astro';
+import Footer from '@/components/footer/footer.astro';
 import Navigation from '@/components/navigation/navigation.astro';
 import { Toaster } from '@/components/ui/toaster';
 ---
@@ -13,6 +14,7 @@ import { Toaster } from '@/components/ui/toaster';
     <main class="main">
       <slot />
     </main>
+    <Footer />
     <Toaster client:load />
   </body>
 </html>
