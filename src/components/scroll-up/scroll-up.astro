@@ -1,0 +1,46 @@
+---
+import { ChevronUp } from 'lucide-react';
+---
+
+<a
+  x-data="{ showScroll: false }"
+  href="#"
+  class="scrollup"
+  :class="{ 'show-scroll': showScroll }"
+  id="scroll-up"
+  @scroll.window="showScroll = (window.scrollY >= 350 ? true : false)"
+  ><ChevronUp /></a
+>
+
+<style is:global>
+  /*=============== SCROLL UP ===============*/
+  .scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background-color: var(--black-color);
+    display: inline-flex;
+    padding: 8px;
+    font-size: 1.25rem;
+    color: var(--white-color);
+    z-index: var(--z-tooltip);
+    transition:
+      bottom 0.4s,
+      transform 0.4s,
+      background-color 0.4s;
+  }
+
+  .scrollup svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .scrollup:hover {
+    transform: translateY(-0.5rem);
+  }
+
+  /* Show Scroll Up */
+  .show-scroll {
+    bottom: 3rem;
+  }
+</style>

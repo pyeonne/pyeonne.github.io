@@ -5,7 +5,7 @@ import MenuSheet from './menu-sheet';
 <header
   x-data="{ atTop: true }"
   class="header"
-  :class="{ 'shadow-header ': !atTop, '': atTop }"
+  :class="{ 'shadow-header ': !atTop }"
   id="header"
   @scroll.window="atTop = (window.pageYOffset >= 50 ? false : true)"
 >
