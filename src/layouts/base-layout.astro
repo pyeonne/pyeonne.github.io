@@ -3,12 +3,14 @@ import BaseHead from '@/components/base-head.astro';
 import Footer from '@/components/footer/footer.astro';
 import Header from '@/components/header/header.astro';
 import ScrollUp from '@/components/scroll-up/scroll-up.astro';
+import ThemeProvider from '@/components/theme-provider.astro';
 import { Toaster } from '@/components/ui/toaster';
 ---
 
 <html lang={Astro.props.lang}>
   <head>
     <BaseHead />
+    <ThemeProvider />
   </head>
   <body>
     <Header />

@@ -7,14 +7,13 @@ import NavLink from './nav-link';
 export default function MenuSheet() {
   return (
     <Sheet>
-      <div className="nav__buttons">
-        <SheetTrigger asChild>
-          <div className="nav__toggle" id="nav-toggle">
-            <LayoutGrid className="h-5 w-5" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </div>
-        </SheetTrigger>
-      </div>
+      <SheetTrigger asChild>
+        <div className="nav__toggle" id="nav-toggle">
+          <LayoutGrid className="h-5 w-5" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </div>
+      </SheetTrigger>
+
       <SheetContent side="top" id="nav-menu">
         <span className="nav__title">Menu</span>
         <h3 className="nav__name">Hana</h3>
@@ -25,13 +24,6 @@ export default function MenuSheet() {
           <NavLink href="#contact" title="Contact Me" />
           <NavLink href="/blog" title="Blog" />
         </ul>
-
-        {/* <div className="nav__social flex gap-x-2">
-          <NavSocialLink href="#" icon={<AtSign />} />
-          <NavSocialLink href="#" icon={<Github />} />
-          <NavSocialLink href="#" icon={<Twitter />} />
-          <NavSocialLink href="#" icon={<Linkedin />} />
-        </div> */}
       </SheetContent>
     </Sheet>
   );
