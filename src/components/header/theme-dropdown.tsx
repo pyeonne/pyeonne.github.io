@@ -1,4 +1,5 @@
 import { useStore } from '@nanostores/react';
+import { useEffect } from 'react';
 
 import {
   DropdownMenu,
@@ -10,9 +11,18 @@ import { THEME_MAP, type ThemeKey, themeStore } from '@/stores/theme';
 
 import { Button } from '../ui/button';
 import { DotIcon, MoonIcon, SunIcon } from '../ui/icons';
+import { scrollActive } from './header';
 
 export default function ThemeDropdown() {
   const theme = useStore(themeStore);
+
+  useEffect(() => {
+    addEventListener('scroll', scrollActive);
+
+    return () => {
+      removeEventListener('scroll', scrollActive);
+    };
+  });
 
   return (
     <DropdownMenu modal={false}>

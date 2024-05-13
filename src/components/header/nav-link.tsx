@@ -1,26 +1,16 @@
-import { useEffect } from 'react';
-
 import { SheetTrigger } from '@/components/ui/sheet';
-
-import { scrollActive } from './header';
+import { cn } from '@/libs/utils';
 
 interface Props {
   href?: string;
   title: string;
+  className?: string;
 }
 
-export default function NavLink({ href = '#', title }: Props) {
-  useEffect(() => {
-    addEventListener('scroll', scrollActive);
-
-    return () => {
-      removeEventListener('scroll', scrollActive);
-    };
-  });
-
+export default function NavLink({ href = '#', title, className }: Props) {
   return (
     <SheetTrigger className="focus:outline-none">
-      <li className="nav__item">
+      <li className={cn('nav__item', className)}>
         <a href={href} className="nav__link">
           {title}
         </a>

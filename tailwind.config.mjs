@@ -10,13 +10,7 @@ export default {
       mono: 'var(--font-mono)',
       pixel: 'var(--font-pixel)',
     },
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-    },
+
     colors: {
       first: 'var(--first-color)',
       black: 'var(--black-color)',

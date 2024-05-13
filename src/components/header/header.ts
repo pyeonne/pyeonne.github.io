@@ -9,14 +9,16 @@ export function scrollActive() {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 58;
     const sectionId = current.getAttribute('id');
-    const sectionsClass = document.querySelector(
+    const sectionsClass = document.querySelectorAll(
       '.nav__menu a[href*=' + sectionId + ']',
     );
 
     if (scrollDown >= sectionTop && scrollDown <= sectionTop + sectionHeight) {
-      sectionsClass?.classList.add('active-link');
+      sectionsClass.forEach((current) => current.classList.add('active-link'));
     } else {
-      sectionsClass?.classList.remove('active-link');
+      sectionsClass.forEach((current) =>
+        current.classList.remove('active-link'),
+      );
     }
   });
 }

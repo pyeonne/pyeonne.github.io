@@ -18,7 +18,7 @@ export default function MenuSheet() {
         <span className="nav__title">Menu</span>
         <h3 className="nav__name">Hana</h3>
         <ul className="nav__list text-lg font-medium">
-          <NavLink href="#home" title="Home" />
+          <NavLink href="#home" title="Home" className="active-link" />
           <NavLink href="#about" title="About Me" />
           <NavLink href="#projects" title="Projects" />
           <NavLink href="#contact" title="Contact Me" />
